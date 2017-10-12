@@ -10,14 +10,23 @@ double readFile ()
 
 
 // Writing
-double writeFile ()
+double writeFile (int studID, float gpa, int studStand, float studAge)
 {
+	cout << "Enter the student ID: ";
+	cin >> studID;
+	cout << "Enter the GPA of the student (on a 4.0 scale): ";
+	cin >> gpa;
+	cout << "Enter Class Standing (1 for Freshman, 2 for Sophomore, 3 for Junior, 4 for Senior): ";
+	cin >> studStand;
+	cout << "Enter age: ";
+	cin >> studAge;
 }
 
 
 int main ()
 {
-	int option=0;
+	int option=0, iNum1=0, iNum2=0;
+	float fNum1=0, fNum2=0;
 
 	// Reading or Writing
 	cout << "1. Reading" << endl;
@@ -30,7 +39,7 @@ int main ()
 			readFile();
 			break;
 		case 2: // Writing
-			writeFile();
+			writeFile(iNum1, fNum1, iNum2, fNum2);
 			break;
 	}
 
