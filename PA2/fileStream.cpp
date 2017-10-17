@@ -10,23 +10,64 @@ double readFile ()
 
 
 // Writing
-double writeFile (int studID, float gpa, int studStand, float studAge)
+double writeFile (char data[100])
 {
+	ofstream outfile;
+	outfile.open("input.dat");
+
+	outfile << data << endl;
+
+
 	cout << "Enter the student ID: ";
-	cin >> studID;
+	cin >> data;
+	cin.ignore();
+
+	outfile << data << endl;
+
+
 	cout << "Enter the GPA of the student (on a 4.0 scale): ";
-	cin >> gpa;
+	cin >> data;
+	cin.ignore();
+
+	outfile << data << endl;
+
+
 	cout << "Enter Class Standing (1 for Freshman, 2 for Sophomore, 3 for Junior, 4 for Senior): ";
-	cin >> studStand;
+	cin >> data;
+	cin.ignore();
+
+	outfile << data << endl;
+
+
 	cout << "Enter age: ";
-	cin >> studAge;
+	cin >> data;
+	cin.ignore();
+
+	outfile << data << endl;
+	
+	outfile.close();
+	cout << "Here's the input:" << endl << endl;
+
+	ifstream infile;
+
+	infile.open("input.dat");
+
+	infile >> data;
+
+	cout << data << endl;
+
+	infile >> data;
+
+	cout << data << endl;
+
+	infile.close();
 }
 
 
 int main ()
 {
-	int option=0, iNum1=0, iNum2=0;
-	float fNum1=0, fNum2=0;
+	int option=0;
+	char input[100];
 
 	// Reading or Writing
 	cout << "1. Reading" << endl;
@@ -39,7 +80,7 @@ int main ()
 			readFile();
 			break;
 		case 2: // Writing
-			writeFile(iNum1, fNum1, iNum2, fNum2);
+			writeFile(input);
 			break;
 	}
 
