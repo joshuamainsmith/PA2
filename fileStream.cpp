@@ -15,8 +15,6 @@ double writeFile (char data[100])
 	ofstream outfile;
 	outfile.open("input.dat");
 
-	outfile << data << endl;
-
 
 	cout << "Enter the student ID: ";
 	cin >> data;
@@ -46,6 +44,7 @@ double writeFile (char data[100])
 	outfile << data << endl;
 	
 	outfile.close();
+
 	cout << "Here's the input:" << endl << endl;
 
 	ifstream infile;
