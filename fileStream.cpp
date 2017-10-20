@@ -12,7 +12,7 @@ double readFile ()
 // Writing
 double writeFile (char data[100])
 {
-	int n=0, m=0;
+	int n=0, m=0, p=0;
 
 	cout << "Enter the number of students you wish to add: ";
 	cin >> n;
@@ -50,8 +50,6 @@ double writeFile (char data[100])
 		outfile << data << endl;
 	
 		outfile.close();
-
-		int p=0;
 
 		cout << "Data for student " << data[p] << " is finished" << endl;
 		
